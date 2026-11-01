@@ -82,7 +82,13 @@
 
     <dialog class="magic-dialog" aria-labelledby="magic-title">
       <button class="dialog-close" type="button" aria-label="Закрыть сюрприз">×</button>
-      <div class="magic-picture" aria-hidden="true"><span class="wing wing-one"></span><span class="wing wing-two"></span><span class="wing wing-three"></span><span class="wing wing-four"></span><svg class="magic-spark"><use href="#spark" /></svg></div>
+      <div class="magic-picture">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="assets/stella-still.gif" />
+          <source type="image/webp" srcset="assets/stella.webp" />
+          <img src="assets/stella.gif" width="480" height="270" alt="Стелла из Винкс во время превращения" decoding="async" />
+        </picture>
+      </div>
       <p class="magic-eyebrow">превращение завершено</p>
       <h2 id="magic-title">Ты фея.<br /><span>Какие вопросы?</span></h2>
       <p class="magic-message">Внутренний критик вышел из чата.<br />Блёстки остались.</p>

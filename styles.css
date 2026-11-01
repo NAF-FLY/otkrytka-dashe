@@ -352,58 +352,23 @@ svg {
   font-size: 28px;
 }
 .magic-picture {
-  height: 170px;
-  width: 230px;
-  max-width: 100%;
-  position: relative;
-  margin: 0 auto 4px;
-  display: grid;
-  place-items: center;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  margin: 17px auto 16px;
+  overflow: hidden;
+  border: 1px solid #a68ab1;
+  background: #e8d8f2;
 }
-.wing {
-  position: absolute;
-  background:
-    repeating-linear-gradient(
-      30deg,
-      transparent,
-      transparent 24px,
-      #fff9 25px,
-      transparent 26px
-    ),
-    linear-gradient(120deg, #fcdae9, #c4a4df);
-  border: 1px solid #9b75b0;
-  border-radius: 80% 15% 75% 25%;
-  width: 103px;
-  height: 125px;
-  top: 0;
-  left: 13px;
-  transform: rotate(-15deg);
+.magic-picture picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
-.wing-two {
-  left: auto;
-  right: 13px;
-  transform: scaleX(-1) rotate(-15deg);
-}
-.wing-three {
-  top: 80px;
-  left: 40px;
-  width: 69px;
-  height: 79px;
-  transform: rotate(-75deg);
-}
-.wing-four {
-  top: 80px;
-  left: auto;
-  right: 40px;
-  width: 69px;
-  height: 79px;
-  transform: scaleX(-1) rotate(-75deg);
-}
-.magic-spark {
-  width: 43px;
-  height: 62px;
-  color: var(--ink);
-  z-index: 1;
+.magic-picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .magic-eyebrow {
   font-size: 9px;
@@ -434,9 +399,6 @@ svg {
   padding: 11px 22px;
   border: 0;
   font-size: 12px;
-}
-.magic-dialog[open] .magic-picture {
-  animation: magic-bloom 0.65s ease-out;
 }
 body.dialog-open {
   overflow: hidden;
@@ -486,16 +448,6 @@ body.dialog-open {
   45%,
   55% {
     transform: rotateY(80deg);
-  }
-}
-@keyframes magic-bloom {
-  from {
-    opacity: 0;
-    transform: scale(0.65);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 @keyframes confetti-fall {

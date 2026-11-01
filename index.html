@@ -7,8 +7,8 @@
     <meta name="description" content="Даша, с днём рождения! Маленькая открытка с теплом и магией." />
     <title>Даша, с днём рождения!</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 35S1 23 3 12C5 1 17 3 20 10 23 3 35 1 37 12 39 23 20 35 20 35' fill='%23d58bb1'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=94026a7b38" />
-    <script src="script.js?v=cd5dfb03ec" defer></script>
+    <link rel="stylesheet" href="styles.css?v=91a65fa466" />
+    <script src="script.js?v=2923a1ddcc" defer></script>
   </head>
   <body>
     <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -64,14 +64,25 @@
             <h2 id="inside-title" tabindex="-1">Даша,</h2>
             <div class="letter-text">
               <p>Пусть у тебя будет много поводов смеяться, творить и говорить: «Смотри, какая красота!»</p>
-              <p>Пусть рядом будут люди, с которыми можно быть любой: серьёзной, странной, нежной или феей Винкс. Без объяснительной.</p>
+              <p>Пусть рядом будут люди, с которыми можно быть любой: серьёзной, нежной или феей Винкс. Без объяснительной.</p>
               <p>Желаю тебе смелости для своих идей, времени для себя и побольше дней, которые хочется запомнить.</p>
               <p class="last-wish">Ты не обязана быть попроще.<br />Просто будь счастлива.</p>
             </div>
             <p class="signature">С днём рождения ♡</p>
             <div class="little-surprise">
-              <button class="bug-button" id="wish-button" type="button" aria-label="Поймать пожелание от жука"><svg aria-hidden="true"><use href="#beetle" /></svg><span>жук кое-что принёс ↗</span></button>
-              <p id="wish-text" class="bug-wish" aria-live="polite" aria-atomic="true">Нажми на него — он с пожеланием.</p>
+              <button class="bug-button" id="wish-button" type="button" aria-controls="bug-note">
+                <span class="bug-route" aria-hidden="true">
+                  <span class="bug-trail"></span>
+                  <svg class="bug-courier"><use href="#beetle" /></svg>
+                  <span class="tiny-envelope">♡</span>
+                </span>
+                <span class="bug-caption">Жук-почтальон<span id="bug-action">Нажми — он принёс тебе записку</span></span>
+              </button>
+              <div class="bug-note" id="bug-note" hidden>
+                <span class="note-heart" aria-hidden="true">♡</span>
+                <p id="wish-text" class="bug-wish" aria-live="polite" aria-atomic="true"></p>
+                <span class="note-signature">от маленького жука. с большим теплом.</span>
+              </div>
             </div>
             <button class="magic-button" id="magic-button" type="button"><svg aria-hidden="true"><use href="#spark" /></svg> Винкс, превращение!</button>
           </section>
@@ -93,7 +104,6 @@
         <p>Винкс, превращение!</p>
         <h2 id="transformation-title">Даша,<br />твоё время сиять.</h2>
       </div>
-      <button class="skip-transformation" type="button">Пропустить</button>
     </dialog>
 
     <dialog class="magic-dialog" aria-labelledby="magic-title">

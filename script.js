@@ -1,9 +1,9 @@
 const wishes = [
   "Пусть на творчество всегда находятся и вдохновение, и силы, и тот самый материал, который нигде не продавался.",
-  "Желаю тебе редкий дроп: спокойствие, хороший сон и мем, который смешит даже с пятого раза.",
+  "Желаю тебе спокойных вечеров, крепкого сна и поводов смеяться до слёз.",
   "Пусть твои «а что, если…» превращаются во что-то классное.",
   "Пусть рядом будут люди, которые тоже остановятся посмотреть на красивого жука.",
-  "Пусть твоим мечтам будет где развернуться. Даже самым странным. Особенно им.",
+  "Пусть твоим мечтам будет где развернуться. Даже самым смелым. Особенно им.",
   "Желаю побольше «как же мне хорошо» и поменьше «надо было ответить вот так» перед сном.",
 ];
 
@@ -16,6 +16,11 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const confettiLayer = document.querySelector(".confetti-layer");
 let turning = false;
 let wishIndex = -1;
+let wishDeck = [];
+let deliveryTimer;
+let delivering = false;
+const wishButton = document.querySelector("#wish-button");
+const bugNote = document.querySelector("#bug-note");
 
 function turnCard(open) {
   if (turning) return;
@@ -44,12 +49,47 @@ function turnCard(open) {
 openButton.addEventListener("click", () => turnCard(true));
 closeButton.addEventListener("click", () => turnCard(false));
 
-document.querySelector("#wish-button").addEventListener("click", () => {
-  const step = 1 + Math.floor(Math.random() * (wishes.length - 1));
-  wishIndex = (wishIndex + step) % wishes.length;
-  const text = document.querySelector("#wish-text");
-  text.textContent = wishes[wishIndex];
-  text.classList.add("is-revealed");
+function deliverNote() {
+  clearTimeout(deliveryTimer);
+  if (wishDeck.length === 0) {
+    wishDeck = wishes.map((_, index) => index);
+    for (let i = wishDeck.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [wishDeck[i], wishDeck[j]] = [wishDeck[j], wishDeck[i]];
+    }
+    if (wishDeck.at(-1) === wishIndex) wishDeck.reverse();
+  }
+  wishIndex = wishDeck.pop();
+  document.querySelector("#wish-text").textContent = wishes[wishIndex];
+  bugNote.hidden = false;
+  bugNote.classList.remove("is-unfolding");
+  void bugNote.offsetWidth;
+  bugNote.classList.add("is-unfolding");
+  wishButton.classList.remove("is-delivering");
+  wishButton.disabled = false;
+  wishButton.removeAttribute("aria-busy");
+  document.querySelector("#bug-action").textContent =
+    "Отправить за ещё одной запиской ↗";
+  delivering = false;
+  if (!inside.hidden && !document.body.classList.contains("dialog-open"))
+    bugNote.scrollIntoView({
+      block: "nearest",
+      behavior: reducedMotion.matches ? "instant" : "smooth",
+    });
+}
+
+wishButton.addEventListener("click", () => {
+  if (delivering) return;
+  if (reducedMotion.matches) {
+    deliverNote();
+    return;
+  }
+  delivering = true;
+  wishButton.disabled = true;
+  wishButton.setAttribute("aria-busy", "true");
+  wishButton.classList.add("is-delivering");
+  document.querySelector("#bug-action").textContent = "Жук уже в пути…";
+  deliveryTimer = setTimeout(deliverNote, 850);
 });
 
 function celebrate() {
@@ -133,9 +173,6 @@ magicButton.addEventListener("click", () => {
   document.body.classList.add("dialog-open");
   transformationTimer = setTimeout(revealMagic, 1850);
 });
-document
-  .querySelector(".skip-transformation")
-  .addEventListener("click", revealMagic);
 transformation.addEventListener("cancel", resetTransformation);
 transformation.addEventListener("close", () => {
   if (magic.open) return;
@@ -162,4 +199,5 @@ magic.addEventListener("close", () => {
 reducedMotion.addEventListener("change", () => {
   confettiLayer.replaceChildren();
   if (reducedMotion.matches && transformationActive) revealMagic();
+  if (reducedMotion.matches && delivering) deliverNote();
 });

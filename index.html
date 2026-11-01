@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e9dfee" />
+    <meta name="description" content="Даша, с днём рождения! Маленькая открытка с теплом и магией." />
+    <title>Даша, с днём рождения!</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 35S1 23 3 12C5 1 17 3 20 10 23 3 35 1 37 12 39 23 20 35 20 35' fill='%23d58bb1'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <symbol id="spark" viewBox="0 0 40 40"><path d="M20 0 24 15 40 20 24 25 20 40 15 25 0 20 15 15Z" fill="currentColor" /></symbol>
+        <symbol id="bow" viewBox="0 0 100 65"><path d="M44 24C27 4 6 1 6 17c0 9 0 22 7 25s23-4 32-11M56 24C73 4 94 1 94 17c0 9 0 22-7 25s-23-4-32-11" fill="currentColor" stroke="#30262d" stroke-width="2"/><path d="m45 31-18 29 19-8 5 9 6-28 17 27-1-17 15 5-30-22" fill="currentColor" stroke="#30262d" stroke-width="2"/><rect x="43" y="19" width="16" height="18" rx="5" fill="currentColor" stroke="#30262d" stroke-width="2"/></symbol>
+        <symbol id="moth" viewBox="0 0 500 390">
+          <g stroke="#30262d" stroke-width="3" stroke-linejoin="round">
+            <path d="M247 190C203 100 78 25 32 60 9 86 51 198 181 222 108 239 92 311 140 337c46 24 95-65 108-120" fill="#b6a0da"/>
+            <path d="M253 190C297 100 422 25 468 60c23 26-19 138-149 162 73 17 89 89 41 115-46 24-95-65-108-120" fill="#b6a0da"/>
+            <path d="M244 188C186 118 95 79 53 79c24 62 78 113 159 118M256 188C314 118 405 79 447 79c-24 62-78 113-159 118" fill="#f1d8e7"/>
+            <path d="M231 209c-35 6-83 57-88 97 37-9 63-36 86-73M269 209c35 6 83 57 88 97-37-9-63-36-86-73" fill="#f6b3cc"/>
+            <path d="M52 79c58 20 108 64 158 118M448 79c-58 20-108 64-158 118M104 83l43 84-75-43M396 83l-43 84 75-43" fill="none" stroke-width="2"/>
+            <path d="m116 140 13-23 13 23-13 23ZM358 140l13-23 13 23-13 23Z" fill="#faf5e9"/>
+            <path d="M240 159c-6-27-23-35-32-32m52 32c6-27 23-35 32-32" fill="none" stroke-linecap="round"/>
+            <ellipse cx="250" cy="212" rx="13" ry="51" fill="#30262d"/>
+            <path d="m245 185 10 0m-12 19h14m-13 19h12" stroke="#eac2db" stroke-width="3"/>
+            <circle cx="250" cy="166" r="13" fill="#30262d"/>
+            <path d="M79 185q38 31 88 31m254-31q-38 31-88 31" fill="none" stroke="#faf5e9" stroke-width="5" stroke-dasharray="2 12"/>
+            <circle cx="176" cy="267" r="10" fill="#faf5e9"/><circle cx="324" cy="267" r="10" fill="#faf5e9"/>
+          </g>
+        </symbol>
+        <symbol id="beetle" viewBox="0 0 180 180">
+          <g fill="none" stroke="#30262d" stroke-width="3" stroke-linecap="round"><path d="m66 72-27-15-12 9m38 29-30 5-9 16m43-2-26 23 1 15m70-80 27-15 12 9m-38 29 30 5 9 16m-43-2 26 23-1 15M80 48 69 24m31 24 11-24"/><ellipse cx="90" cy="100" rx="35" ry="48" fill="#a0b69b"/><path d="M90 57v91m-35-47 35-20 35 20"/><path d="M70 60q0-29 20-29t20 29Z" fill="#30262d"/><path d="m67 111 13 16m24-38 8 11" stroke="#e7f0b4" stroke-width="5"/></g>
+        </symbol>
+        <symbol id="butterfly" viewBox="0 0 180 180"><g stroke="#30262d" stroke-width="2.5" stroke-linejoin="round"><path d="M88 83C58 20 9 14 22 67c3 17 28 31 50 34-48-2-51 36-27 45 20 6 40-22 45-47m2-16c30-63 79-69 66-16-3 17-28 31-50 34 48-2 51 36 27 45-20 6-40-22-45-47" fill="#f1b1c9"/><path d="m35 50 37 29m73-29-37 29M53 129l19-15m55 15-19-15" fill="none" stroke="#fff3e7" stroke-width="6"/><path d="M84 74Q74 45 66 49m30 25q10-29 18-25" fill="none"/><path d="M90 73v45" stroke-width="7"/></g></symbol>
+      </defs>
+    </svg>
+
+
+    <div class="confetti-layer" aria-hidden="true"></div>
+    <main class="scene">
+      <div class="postcard-shell">
+        <svg class="corner-bow" aria-hidden="true"><use href="#bow" /></svg>
+        <article class="postcard" aria-label="Открытка для Даши">
+          <section class="cover" id="cover" aria-labelledby="cover-title">
+            <p class="little-line">для одной очень особенной Даши</p>
+            <div class="cover-picture" aria-hidden="true">
+              <svg class="cover-moth"><use href="#moth" /></svg>
+              <svg class="spark spark-left"><use href="#spark" /></svg>
+              <svg class="spark spark-right"><use href="#spark" /></svg>
+              <span class="picture-note">ты — маленькое чудо</span>
+            </div>
+            <h1 id="cover-title">Даша,<span>с днём<br />рождения!</span></h1>
+            <p class="cover-wish">Пусть всё хорошее<br />слетается к тебе.</p>
+            <button class="open-button" id="open-card" type="button" aria-controls="inside" aria-expanded="false">Открыть открытку <span aria-hidden="true">♡</span></button>
+            <p class="hint">внутри немного тепла и магии</p>
+          </section>
+
+          <section class="inside" id="inside" aria-labelledby="inside-title" hidden>
+            <button class="back-button" id="close-card" type="button" aria-label="Вернуться к обложке">← <span>на обложку</span></button>
+            <svg class="letter-butterfly" aria-hidden="true"><use href="#butterfly" /></svg>
+            <h2 id="inside-title" tabindex="-1">Даша,</h2>
+            <div class="letter-text">
+              <p>Пусть у тебя будет много поводов смеяться, творить и говорить: «Смотри, какая красота!»</p>
+              <p>Пусть рядом будут люди, с которыми можно быть любой: серьёзной, странной, нежной или феей Винкс. Без объяснительной.</p>
+              <p>Желаю тебе смелости для своих идей, времени для себя и побольше дней, которые хочется запомнить.</p>
+              <p class="last-wish">Ты не обязана быть попроще.<br />Просто будь счастлива.</p>
+            </div>
+            <p class="signature">С днём рождения ♡</p>
+            <div class="little-surprise">
+              <button class="bug-button" id="wish-button" type="button" aria-label="Поймать пожелание от жука"><svg aria-hidden="true"><use href="#beetle" /></svg><span>жук кое-что принёс ↗</span></button>
+              <p id="wish-text" class="bug-wish" aria-live="polite" aria-atomic="true">Нажми на него — он с пожеланием.</p>
+            </div>
+            <button class="magic-button" id="magic-button" type="button"><svg aria-hidden="true"><use href="#spark" /></svg> Винкс, превращение!</button>
+          </section>
+        </article>
+      </div>
+      <p class="outside-note">одна открытка. только для тебя.</p>
+    </main>
+
+    <dialog class="magic-dialog" aria-labelledby="magic-title">
+      <button class="dialog-close" type="button" aria-label="Закрыть сюрприз">×</button>
+      <div class="magic-picture" aria-hidden="true"><span class="wing wing-one"></span><span class="wing wing-two"></span><span class="wing wing-three"></span><span class="wing wing-four"></span><svg class="magic-spark"><use href="#spark" /></svg></div>
+      <p class="magic-eyebrow">превращение завершено</p>
+      <h2 id="magic-title">Ты фея.<br /><span>Какие вопросы?</span></h2>
+      <p class="magic-message">Внутренний критик вышел из чата.<br />Блёстки остались.</p>
+      <button class="magic-done" type="button">Так и запишем ♡</button>
+    </dialog>
+  </body>
+</html>
